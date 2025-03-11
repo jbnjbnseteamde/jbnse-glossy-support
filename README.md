@@ -1,5 +1,5 @@
 # JBnSE-Glossy-Support
-Dieses Repository dient dem Support der App JBnSE-Glossy.
+Dieses [Repository](https://github.com/jbnjbnseteamde/jbnse-glossy-support) dient dem Support der App JBnSE-Glossy.
 
 Die wesentlichen Ziele sind die folgenden:
 
@@ -21,4 +21,13 @@ Die Dokumentation der üblichen Nutzung der App erfolgt innerhalb der Anwendung 
 * Optional lokales Identity Management System einrichten
 * Mit der Nutzung beginnen
 
-### Weitere Bereitstellungen folgen später...
+### Weitere Bereitstellungen folgen später ...
+
+## Voraussetzungen
+
+### Docker Desktop
+
+* Download AMD64
+* Dann Start
+* Use recommended Settings
+* WSL Fehler, mit Windows Home ist WSL 2 erforderlich und in Docker-Settings vorausgewählt, Subsystem installieren ...
