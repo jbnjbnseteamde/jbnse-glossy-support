@@ -1,10 +1,9 @@
-version: "3"
 
 services:
 
   postgres:
     image: ${REPOSITORY}postgres-de:${POSTGRES_TAG}
-    container_name: ${COMPOSE_PROJECT_BASE}-postgres-${APP_TAG}
+    container_name: ${COMPOSE_PROJECT_NAME}-postgres
     ports:
       - ${POSTGRES_PORT}:5432
     environment:
@@ -14,7 +13,7 @@ services:
 
   api:
     image: ${REPOSITORY}glossy-api01:${API_TAG}
-    container_name: ${COMPOSE_PROJECT_BASE}-api-${APP_TAG}
+    container_name: ${COMPOSE_PROJECT_NAME}-api
     volumes:
       - type: bind
         source: ${MOUNT_ROOT}/var/lib/${COMPOSE_PROJECT_NAME}
@@ -32,7 +31,7 @@ services:
 
   cat:
     image: ${REPOSITORY}glossy-cat01:${CAT_TAG}
-    container_name: ${COMPOSE_PROJECT_BASE}-cat-${APP_TAG}
+    container_name: ${COMPOSE_PROJECT_NAME}-cat
     expose:
       - ${CAT_PORT}
     ports:
@@ -47,7 +46,7 @@ services:
   keycloak:
     # https://medium.com/@fingervinicius/easy-running-keycloak-with-docker-compose-b0d7a4ee2358
     image: quay.io/keycloak/keycloak:${KEYCLOAK_VERSION}
-    container_name: ${COMPOSE_PROJECT_BASE}-keycloak-${APP_TAG}
+    container_name: ${COMPOSE_PROJECT_NAME}-keycloak
     environment:
       KC_HOSTNAME: keycloak # localhost funktioniert nicht innerhalb docker-Konfiguration
       KC_HOSTNAME_PORT: ${KEYCLOAK_PORT}
